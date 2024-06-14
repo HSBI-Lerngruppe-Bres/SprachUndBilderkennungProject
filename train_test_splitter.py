@@ -3,8 +3,8 @@ import shutil
 import random
 
 # Define the paths
-base_folder = 'datasets/V2'
-current_test_folder = os.path.join(base_folder, 'test')
+base_folder = 'datasets/V3'
+current_test_folder = os.path.join(base_folder, 'all')
 train_folder = os.path.join(base_folder, 'train')
 new_test_folder = os.path.join(base_folder, 'val')
 
