@@ -1,9 +1,8 @@
 import os
-from PIL import Image
 import cv2
 
 
-def convert_to_black_and_white(input_folder, output_folder):
+def convert_and_resize_images(input_folder, output_folder, size=(28, 28)):
     # Create the output folder if it doesn't exist
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -17,18 +16,20 @@ def convert_to_black_and_white(input_folder, output_folder):
                 image = cv2.imread(file_path)
                 # Convert the image to grayscale
                 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+                # Resize the image
+                resized_image = cv2.resize(gray_image, size)
                 # Construct the output file path
                 relative_path = os.path.relpath(root, input_folder)
                 output_path = os.path.join(output_folder, relative_path)
                 if not os.path.exists(output_path):
                     os.makedirs(output_path)
-                # Save the grayscale image
-                cv2.imwrite(os.path.join(output_path, file), gray_image)
+                # Save the resized grayscale image
+                cv2.imwrite(os.path.join(output_path, file), resized_image)
 
 
 # Path to your CIFAR-100 dataset folder
-input_folder = 'path/to/your/cifar100/folder'
+input_folder = 'datasets/Max/train'
 # Path to save the black and white images
-output_folder = 'path/to/save/black_and_white_images'
+output_folder = 'datasets/MaxE/val'
 
-convert_to_black_and_white(input_folder, output_folder)
+convert_and_resize_images(input_folder, output_folder)
