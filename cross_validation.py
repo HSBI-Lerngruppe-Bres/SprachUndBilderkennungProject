@@ -3,9 +3,9 @@ import shutil
 from sklearn.model_selection import KFold
 
 # Define the path to your dataset
-original_dataset_dir = 'datasets/V3/all_reduced'
+original_dataset_dir = 'datasets/V3/all_reduced_2'
 new_dataset_dir = 'datasets'
-file_prefix = "fold_reduced_"
+file_prefix = "fold_reduced_2_"
 
 # Create the new dataset directory if it doesn't exist
 os.makedirs(new_dataset_dir, exist_ok=True)
@@ -52,3 +52,4 @@ for fold_idx, (train_index, test_index) in enumerate(kf.split(list(file_paths[cl
                 test_dir, class_name, os.path.basename(file_path)))
 
 print("Datasets for cross-validation created successfully!")
+x

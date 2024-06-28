@@ -10,21 +10,21 @@ models = [
     "runs/classify/train49/weights/last.pt",
 ]
 
-"""datasets = [
+datasets = [
     "fold_reduced_1",
     "fold_reduced_2",
     "fold_reduced_3",
     "fold_reduced_4",
     "fold_reduced_5",
-]"""
+]
 
-datasets = [
+"""datasets = [
     "Nils",
     "Lea",
     "Max",
     "Benjamin",
     "Max"
-]
+]"""
 
 scores = []
 

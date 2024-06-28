@@ -1,11 +1,13 @@
 from ultralytics.models.yolo.classify import ClassificationTrainer
-import matplotlib.pyplot as plt
-import os
 
 # List of model configurations and data folds
 model_sizes = ['yolov8n-cls.pt']
-datas = ['fold_reduced_1', 'fold_reduced_2',
-         'fold_reduced_3', 'fold_reduced_4', 'fold_reduced_5']
+
+datas = ['fold_reduced_2_1', 'fold_reduced_2_2',
+         'fold_reduced_2_3', 'fold_reduced_2_4', 'fold_reduced_2_5']
+
+"""model_sizes = ['yolov8n-cls.pt', "yolov8s-cls.pt", "yolov8m-cls.pt"]
+datas = ["fold_1"]"""
 
 # Training parameters
 epochs = 100
